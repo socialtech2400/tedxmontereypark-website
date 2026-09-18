@@ -812,24 +812,110 @@ blockquote p {
 }
 
 .ticket-note {
-  background: var(--red-action);
-  color: #fff8ef;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-raised);
+  color: var(--ink);
 }
 
-.ticket-note h2 {
-  max-width: 16ch;
-  margin: 0;
-  color: inherit;
-  font-size: clamp(3rem, 7vw, 7rem);
-  line-height: 0.94;
-  text-align: center;
+.ticket-note::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 0.45rem;
+  background: var(--red-action);
+  content: "";
 }
 
 .ticket-note-inner {
-  display: flex;
-  min-height: clamp(15rem, 30vw, 25rem);
+  display: grid;
+  min-height: clamp(24rem, 38vw, 32rem);
+  grid-template-columns: minmax(0, 1fr) minmax(21rem, 0.72fr);
   align-items: center;
-  justify-content: center;
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.ticket-note-copy h2 {
+  max-width: 11ch;
+  margin: 0 0 1.5rem;
+  color: var(--ink);
+  font-size: clamp(3.25rem, 6.4vw, 6.5rem);
+  line-height: 0.94;
+}
+
+.ticket-note-copy p {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
+.ticket-purchase {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: 0 1.5rem 3.5rem var(--shadow);
+}
+
+.ticket-type {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.ticket-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin: 0 0 2rem;
+  color: var(--ink);
+  flex-wrap: wrap;
+}
+
+.ticket-price strong {
+  color: var(--red-text);
+  font-size: clamp(3.2rem, 5vw, 5.6rem);
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+
+.ticket-price span {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.ticket-button {
+  width: 100%;
+  min-height: clamp(4.5rem, 6vw, 5.25rem);
+  border-color: var(--red-action);
+  padding: 1.3rem 1.75rem;
+  background: var(--red-action);
+  box-shadow: 0 0.85rem 1.8rem rgba(173, 27, 19, 0.2);
+  color: #fff8ef;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.ticket-button:hover {
+  border-color: var(--red-action-hover);
+  background: var(--red-action-hover);
+  box-shadow: 0 1rem 2.2rem rgba(173, 27, 19, 0.28);
+  color: #fff8ef;
+  transform: translateY(-3px);
+}
+
+.ticket-platform {
+  max-width: 24rem;
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 .site-footer {
@@ -1343,6 +1429,7 @@ blockquote p {
   .ticket-note-inner {
     gap: 2.5rem;
   }
+
 }
 
 @media (max-width: 38rem) {

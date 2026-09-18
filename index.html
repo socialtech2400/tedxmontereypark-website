@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="TEDxMPK_Square_fixed.png">
     <link rel="icon" href="TEDxMPK.png">
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=10">
     <script>
       document.documentElement.classList.add('js');
     </script>
@@ -43,6 +43,13 @@
         "organizer": {
           "@type": "Organization",
           "name": "TEDxMontereyPark"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.eventbrite.com/e/tedx-monterey-park-reimagining-tomorrow-tickets-2001386613236",
+          "price": "75",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
         },
         "description": "A day for the ideas and people rethinking what comes next for our community and beyond."
       }
@@ -74,6 +81,7 @@
           <a href="#event">Event</a>
           <a href="#idea">Your idea</a>
           <a href="#deadlines">Deadlines</a>
+          <a href="#tickets">Tickets</a>
           <a href="#questions">FAQ</a>
           <button class="theme-button" type="button" data-theme-toggle aria-label="Switch to dark theme" title="Switch to dark theme">
             <span class="theme-icon" data-theme-icon aria-hidden="true">&#9790;</span>
@@ -284,9 +292,24 @@
         </div>
       </section>
 
-      <section class="ticket-note" aria-labelledby="ticket-title">
+      <section class="ticket-note" id="tickets" aria-labelledby="ticket-title">
         <div class="shell ticket-note-inner reveal">
-          <h2 id="ticket-title">Coming soon via Eventbrite.</h2>
+          <div class="ticket-note-copy">
+            <h2 id="ticket-title">Tickets are available.</h2>
+            <p>Join us at ELAC Recital Hall for TEDxMontereyPark: Reimagining Tomorrow.</p>
+          </div>
+          <div class="ticket-purchase">
+            <p class="ticket-type">General Admission</p>
+            <p class="ticket-price"><strong>$75</strong><span>+ Eventbrite fees</span></p>
+            <a
+              class="button ticket-button"
+              href="https://www.eventbrite.com/e/tedx-monterey-park-reimagining-tomorrow-tickets-2001386613236"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Get tickets for TEDxMontereyPark on Eventbrite"
+            >Get Tickets</a>
+            <p class="ticket-platform">Ticket sales and checkout are handled by Eventbrite.</p>
+          </div>
         </div>
       </section>
     </main>
@@ -303,6 +326,7 @@
         <div class="footer-links" aria-label="Footer links">
           <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noreferrer">About TEDx</a>
           <a href="#event">Event</a>
+          <a href="https://www.eventbrite.com/e/tedx-monterey-park-reimagining-tomorrow-tickets-2001386613236" target="_blank" rel="noreferrer">Get Tickets</a>
           <a href="#apply">Speaker application</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="mailto:tedxmontereypark@gmail.com">tedxmontereypark@gmail.com</a>
