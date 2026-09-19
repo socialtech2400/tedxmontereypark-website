@@ -104,19 +104,3 @@ if (reducedMotion.matches || !('IntersectionObserver' in window)) {
 
   revealItems.forEach((item) => revealObserver.observe(item));
 }
-
-const statusMessage = document.querySelector('[data-application-status] span:last-child');
-const applyLinks = document.querySelectorAll('[data-apply-cta]');
-const applicationEnd = new Date('2026-09-19T06:59:59Z');
-const priorityEnd = new Date('2026-09-13T06:59:59Z');
-const currentTime = new Date();
-
-if (statusMessage && currentTime > applicationEnd) {
-  statusMessage.textContent = 'Speaker applications closed Friday, September 18, 2026.';
-  applyLinks.forEach((link) => {
-    link.textContent = 'Applications Closed';
-    link.href = '#deadlines';
-  });
-} else if (statusMessage && currentTime > priorityEnd) {
-  statusMessage.textContent = 'Priority review has passed. Final deadline: Friday, September 18.';
-}
