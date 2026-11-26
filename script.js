@@ -49,6 +49,35 @@ systemTheme.addEventListener('change', (event) => {
   }
 });
 
+const earlyBirdCutoff = document.querySelector('#early-bird-cutoff');
+
+if (earlyBirdCutoff) {
+  const cutoff = Date.parse(earlyBirdCutoff.dateTime);
+  const title = document.querySelector('#admission-title');
+  const prices = document.querySelectorAll('[data-admission-price]');
+  const buttons = document.querySelectorAll('[data-admission-cta]');
+  const earlyBirdDetails = document.querySelectorAll('[data-early-bird]');
+
+  function updateAdmission() {
+    const remaining = cutoff - Date.now();
+    const earlyBird = remaining > 0;
+
+    title.textContent = earlyBird ? 'Early-bird tickets' : 'General admission';
+    prices.forEach((price) => { price.textContent = earlyBird ? '$81.88' : '$92.55'; });
+    buttons.forEach((button) => {
+      button.textContent = earlyBird ? 'Buy early-bird tickets' : 'Buy general admission tickets';
+    });
+    earlyBirdDetails.forEach((detail) => { detail.hidden = !earlyBird; });
+
+    if (earlyBird) {
+      // Browser timers cannot wait more than roughly 24 days at once.
+      window.setTimeout(updateAdmission, Math.min(remaining, 2 ** 31 - 1));
+    }
+  }
+
+  updateAdmission();
+}
+
 const menuButton = document.querySelector('[data-menu-button]');
 const navigation = document.querySelector('[data-navigation]');
 

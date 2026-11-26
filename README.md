@@ -23,7 +23,7 @@ Then open `http://127.0.0.1:4173/`.
 - Privacy Policy and form-level collection notice
 - Light and dark themes
 - Mobile navigation and reduced-motion support
-- Ticket plan: $75 + Eventbrite fees
+- Eventbrite tickets: $81.88 early bird through December 30, 2026, Pacific time, then $92.55 regular admission. Eligible applicants can request $47.19 tickets. All amounts include fees.
 - Event structured data and social metadata
 
 ## Before launch
@@ -36,6 +36,5 @@ Then open `http://127.0.0.1:4173/`.
 - Map every data service and obtain legal review of the Privacy Policy.
 - Add confirmed accessibility, venue, parking, and transit information.
 - Confirm `tedxmontereypark@gmail.com` is monitored by the event team.
-- Add the final Eventbrite URL only when ticket sales are ready.
 
 The complete research and product rationale is in `tedxmonterey-park-website-foundation-report.md`.
